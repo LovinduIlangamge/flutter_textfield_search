@@ -166,7 +166,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
         if (itemsFound == false || loading == true) {
           // reset the list so it's empty and not visible
           resetList();
-          widget.controller.clear();
+          // widget.controller.clear();
         }
         // if we have a list of items, make sure the text input matches one of them
         // if not, clear the input
@@ -179,7 +179,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
           } else {
             textMatchesItem = filteredList.contains(widget.controller.text);
           }
-          if (textMatchesItem == false) widget.controller.clear();
+          // if (textMatchesItem == false) widget.controller.clear();
           resetList();
         }
       }
@@ -202,7 +202,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
           GestureDetector(
             onTap: () {
               // clear the text field controller to reset it
-              widget.controller.clear();
+              // widget.controller.clear();
               setState(() {
                 itemsFound = false;
               });
