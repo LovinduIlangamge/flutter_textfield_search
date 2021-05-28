@@ -123,7 +123,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     // create an empty temp list
     List tempList = new List();
     if (widget.controller.text == '') {
-      tempList = this.starList;
+      tempList = widget.starList;
     }
     // loop through each item in filtered items
     for (int i = 0; i < filteredList.length; i++) {
