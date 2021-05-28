@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'dart:async';
 
 class TextFieldSearch extends StatefulWidget {
+  final List starList;
   final List initialList;
   final String label;
   final TextEditingController controller;
@@ -19,6 +20,7 @@ class TextFieldSearch extends StatefulWidget {
       this.initialList,
       @required this.label,
       @required this.controller,
+      this.starList,
       this.textStyle,
       this.future,
       this.getSelectedValue,
@@ -120,6 +122,9 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     this.filteredList = widget.initialList;
     // create an empty temp list
     List tempList = new List();
+    if (widget.controller.text == '') {
+      tempList = this.starList;
+    }
     // loop through each item in filtered items
     for (int i = 0; i < filteredList.length; i++) {
       // lowercase the item and see if the item contains the string of text from the lowercase search
