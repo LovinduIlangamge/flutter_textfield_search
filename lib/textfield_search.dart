@@ -312,6 +312,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
 
   @override
   Widget build(BuildContext context) {
+    updateList();
     return CompositedTransformTarget(
       link: this._layerLink,
       child: TextField(
