@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'dart:async';
 
 class TextFieldSearch extends StatefulWidget {
+  final validator;
   final List initialList;
   final String label;
   final TextEditingController controller;
@@ -16,6 +17,7 @@ class TextFieldSearch extends StatefulWidget {
 
   const TextFieldSearch(
       {Key key,
+      this.validator,
       this.initialList,
       @required this.label,
       @required this.controller,
@@ -309,7 +311,8 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
   Widget build(BuildContext context) {
     return CompositedTransformTarget(
       link: this._layerLink,
-      child: TextField(
+      child: TextFormField(
+        validator: widget.validator
         controller: widget.controller,
         focusNode: this._focusNode,
         decoration: widget.decoration != null ? widget.decoration : InputDecoration(labelText: widget.label),
