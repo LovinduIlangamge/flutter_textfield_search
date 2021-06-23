@@ -312,7 +312,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     return CompositedTransformTarget(
       link: this._layerLink,
       child: TextFormField(
-        validator: widget.validator
+        validator: widget.validator,
         controller: widget.controller,
         focusNode: this._focusNode,
         decoration: widget.decoration != null ? widget.decoration : InputDecoration(labelText: widget.label),
